@@ -1,0 +1,90 @@
+.lt-ie9 .row,
+.lt-ie9 .row .row {
+	margin-bottom: 68px;
+}
+
+/* To solve image height scaling in IE8 */
+img {
+	height: auto;
+	width: auto;
+}
+
+.lt-ie9 .uxb-port-element-item:hover .uxb-port-element-item-hover {
+	visibility: visible;
+}
+
+.lt-ie9 .uxb-port-element-item-hover {
+	visibility: hidden;
+}
+
+.lt-ie9 .uxb-tmnl-testimonial-item .uxb-tmnl-blockquote-wrapper {
+	height: auto;
+	min-height: 0;
+}
+
+.lt-ie9 .uxb-tmnl-testimonial-item .uxb-tmnl-testimonial-thumbnail img {
+	height: 199px;
+	width: 199px;
+}
+
+.lt-ie9 #content-container a.image-link, 
+.lt-ie9 #content-container a.link-image, 
+.lt-ie9 #content-container a.image-box {
+	display: block;
+}
+
+.lt-ie9 .bar-social li {
+	display: inline;
+}
+
+.lt-ie9 .gallery-wrapper .gallery-item-wrapper {
+	*display: inline; /* hack for ie8 to support inline-block */
+	*zoom: 1; /* hack for ie8 to support inline-block */
+}
+
+.lt-ie9 #author-box #author-photo-wrapper,
+.lt-ie9 #author-box #author-photo-wrapper img,
+.lt-ie9 .commenter-photo img {
+	*display: inline; /* hack for ie8 to support inline-block */
+	*zoom: 1; /* hack for ie8 to support inline-block */
+}
+
+
+.lt-ie9 .flickr_badge_image {
+	width: 65px;
+}
+
+.lt-ie9 .flickr_badge_image img {
+	width: 65px;
+}
+
+.lt-ie9 .flickr_badge_image a {
+	display: block;
+}
+
+.lt-ie9 .section-container.vertical-tabs > section.active > .title, 
+.lt-ie9 .section-container.vertical-tabs > .section.active > .title {
+	border: 0;
+	border-top-width: 1px !important;
+	border-top-style: solid !important;
+	width: 100%;
+}
+
+
+/***** WooCommerce's *****/
+.lt-ie9 .woocommerce .quantity input.qty,
+.lt-ie9 .woocommerce #content .quantity input.qty,
+.lt-ie9 .woocommerce-page .quantity input.qty,
+.lt-ie9 .woocommerce-page #content .quantity input.qty {
+	margin: 0;
+	padding: 10px 0 11px;
+}
+
+.lt-ie9 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content,
+.lt-ie9 .woocommerce-page .widget_price_filter .price_slider_wrapper .ui-widget-content {
+	width: 90%;
+}
+
+.lt-ie9 .woocommerce .star-rating,.woocommerce-page .star-rating {
+	width: 5.6225em;
+}

@@ -1,0 +1,24 @@
+/***** Specific styles for WooCommerce later than v2.1 *****/
+
+.woocommerce-review-link {
+    float: right;
+    font-size: 12px;
+    clear: both;
+}
+
+#ship-to-different-address {
+    font-family: inherit !important;
+    letter-spacing: inherit !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    margin-bottom: 26px !important;
+}
+
+#ship-to-different-address label {
+    display: inline-block;
+}
+
+#ship-to-different-address-checkbox {
+    float: left;
+    margin: 3px 8px 0 0;
+}

@@ -1,0 +1,117 @@
+/*
+Theme Name: Fineliner Child
+Theme URI: http://themes.uxbarn.com/redirect.php?theme=fineliner_wp
+Description: Fineliner is a beautiful and clean responsive WordPress theme that is perfectly suitable for building any portfolio or business websites. You can follow me on Twitter for any update notification: <a href="https://twitter.com/uxbarn">Follow me on Twitter</a>
+Template: fineliner
+Author: UXbarn
+Author URI: http://themeforest.net/user/UXbarn?ref=UXbarn
+Version: 1.6.2
+License: GPL, ThemeForest License
+License URI: http://codex.wordpress.org/GPL, http://themeforest.net/licenses
+Tags: light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-colors, custom-menu, featured-images, sticky-post, theme-options
+Text Domain: uxbarn
+*/
+
+/*****************************
+		General
+*****************************/
+body#theme-body {
+	color: #414042;
+	font-weight: 400;
+}
+#root-container #intro h1, #intro h2, #root-container #content-container h1{
+	color: #414042;
+	font-size: 26px;
+}
+#root-container #intro p{
+	color: #414042;
+}
+#root-container #content-container h2{
+	font-size: 16px;
+	color: #414042;
+	text-transform: capitalize;
+}
+#root-container #content-container h3{
+	font-size: 16px;
+	color: #414042;
+	text-transform: capitalize;
+}
+#root-container #content-container .columns{
+	color: #414042;
+}
+
+#theme-body #root-container #content-container blockquote p, #theme-body #content-container #sidebar-wrapper blockquote p, #theme-body #root-container #footer-content blockquote p{
+	color:#414042;
+	font-size: 14px;
+	font-weight: 400;
+}
+#theme-body #root-container #content-container .uxb-tmnl-testimonial-item .uxb-tmnl-cite, #theme-body #root-container #footer-content .uxb-tmnl-testimonial-item .uxb-tmnl-cite{
+	color: #24c8bf;
+	font-weight: 700;
+	font-size: 14px;
+}
+#root-container #content-container .uxb-tmnl-testimonial-bullets a.selected, #root-container #content-container #sidebar-wrapper .uxb-tmnl-testimonial-bullets a.selected, #root-container #footer-content .uxb-tmnl-testimonial-bullets a.selected{
+	border-color: #24c8bf;
+}
+#root-container .slider-controller:hover, #root-container .uxb-port-slider-controller:hover{
+	background: #24c8bf !important;
+}
+/*****************************
+		Button
+*****************************/
+
+#theme-body #root-container .button{
+	color:#414042;
+	border: 1px solid #414042;;
+}
+#theme-body #root-container .button:hover{
+	color: #fff;
+	background: #24c8bf;
+	border-color: #24c8bf;
+}
+
+/*****************************
+		Menu
+*****************************/
+
+#root-container .main-menu > li > a{
+	font-size:14px;
+	color:#414042;
+}
+
+/*****************************
+		Footer
+*****************************/
+
+#root-container #footer-bar-container{
+	color: #414042;
+}
+#root-container #footer-bar-container #copyright-text {
+	width: 70%;
+	margin: 0 auto 18px;
+}
+
+/*****************************
+		About Page
+*****************************/
+
+.cta-box.about-contact-form {
+	background: #f5f5f5;
+	border: none;
+}
+#theme-body #root-container .cta-box.about-contact-form .button{
+	color: #fff;
+	border: 2px solid #C3B8B8;
+	background: #919191;
+	font-weight: 700;
+	font-style: italic;
+	font-size: 20px;
+	line-height: 22px;
+}
+.cta-box.about-contact-form .cta-box-button.right {
+	margin-top: -35px;
+}
+.cta-box.about-contact-form .cta-box-content {
+	font-size: 22px;
+	color: #867F91;
+}
