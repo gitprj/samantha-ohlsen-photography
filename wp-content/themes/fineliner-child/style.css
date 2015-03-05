@@ -56,6 +56,22 @@ body#theme-body {
 #root-container .slider-controller:hover, #root-container .uxb-port-slider-controller:hover{
 	background: #24c8bf !important;
 }
+#root-container #content-container .ui-accordion .ui-accordion-header a{
+	color:#414042;
+	font-size: 14px;
+}
+#root-container #content-container .ui-accordion .ui-accordion-header.ui-state-active a{
+	color: #24c8bf;
+}
+#root-container #content-container .ui-accordion-header.ui-state-active {
+	border-color: #24c8bf;
+}
+#root-container .has-line{
+	border-color: #24c8bf;
+}
+#root-container .flex-control-paging li a.flex-active{
+	background: #24c8bf;
+}
 /*****************************
 		Button
 *****************************/
@@ -70,14 +86,6 @@ body#theme-body {
 	border-color: #24c8bf;
 }
 
-/*****************************
-		Menu
-*****************************/
-
-#root-container .main-menu > li > a{
-	font-size:14px;
-	color:#414042;
-}
 
 /*****************************
 		Footer
@@ -89,6 +97,7 @@ body#theme-body {
 #root-container #footer-bar-container #copyright-text {
 	width: 70%;
 	margin: 0 auto 18px;
+	line-height: 18px;
 }
 
 /*****************************
@@ -110,8 +119,69 @@ body#theme-body {
 }
 .cta-box.about-contact-form .cta-box-button.right {
 	margin-top: -35px;
+	width: 235px;
 }
 .cta-box.about-contact-form .cta-box-content {
 	font-size: 22px;
 	color: #867F91;
+}
+/*****************************
+		Home Page
+*****************************/
+#root-container .uxb-port-element-item-hover {
+	background: #f6f6f6;
+	width: 101%;
+}
+#root-container .uxb-port-element-item-hover hr{
+	border-top: 1px solid #414042;
+}
+#root-container #content-container .uxb-port-element-item-hover h3, #root-container #content-container .uxb-port-element-item-hover h4{
+	margin: 15px 0px;
+	font-size: 15px;
+}
+/*****************************
+		Media query
+*****************************/
+
+@media (min-width: 960px) {
+		#root-container #logo-wrapper{
+			position: static;
+			float: left;
+		}
+		#root-container #menu-wrapper {
+			position: static;
+			float: left;
+			margin-left: 25px;
+			width: 60%;
+		}
+		#theme-body #root-container #menu-wrapper .menu-column{
+			float: left;
+			min-height: 100%;
+			width: auto;
+			padding: 22px 0px;
+		}
+		#root-container .main-menu > li > a{
+			font-size:14px;
+			color:#414042;
+		}
+		#root-container .main-menu > li{
+			float: none;
+		}
+		#root-container .main-menu li ul{
+			top:20px;
+			left: 0px;
+		}
+		#root-container .menu-marker{
+			display: none;
+		}
+		#theme-body #root-container #menu-wrapper .menu-column{
+			border-right: none;
+		}
+		#root-container #header-search a{
+			top:12px;
+		}
+		#root-container #header-search-input-wrapper{
+			top:-5px;
+			bottom: 0px;
+		}
 }
