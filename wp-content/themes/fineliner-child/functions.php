@@ -966,45 +966,47 @@ if ( ! function_exists( 'uxb_post_load_on_demand_assets' ) ) {
 
 }
 
-add_action( 'add_meta_boxes', 'register_custom_fields_to_cpt');
-function register_custom_fields_to_cpt() {
-	add_meta_box( 'template_box', 'Layout Mode', 'set_layout_mode', 'post', 'normal', 'high'  );
-}
-add_action( 'save_post', 'save_custom_fields_values');
-function set_layout_mode(){
+remove_filter( 'the_content', 'easy_image_gallery_append_to_content' );
+
+
+function custom_post_links(){
 	global $post;
-    wp_nonce_field('layout_mode_meta_nonce', 'layout_mode_meta_box_nonce');
-    $data = get_post_meta($post->ID, 'layout_mode', true);
-    if($data !=''){
-    	$selected = "selected=selected";
-    }
-    else{
-    	$selected = "";
-    }
+	$terms = get_the_terms( $post->ID, 'uxbarn_portfolio_tax' );
+	$post_type = $post->post_type;
+	if($terms)
+	foreach ($terms as $term) {
+		if($term->parent == 0){
+			$term_name = $term;
+		}
+	}
+	$postlist_args = array(
+		'post_type' => $post_type,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'uxbarn_portfolio_tax',
+				'field'    => 'slug',
+				'terms'    => $term_name->slug,
+			),
+		),
 
-    ?>
-    <select name="layout_mode" id="layout_mode">
-    	<option value="landscape" <?php echo $selected; ?>>Landscape</option>
-    	<option value="portrait" <?php echo $selected; ?>>Portrait</option>
-    </select>
+	);
 
-<?php }
+	$postlist = get_posts( $postlist_args );
 
-function save_custom_fields_values( $post_id ) {
+	// get ids of posts retrieved from get_posts
+	$ids = array();
+	foreach ($postlist as $thepost) {
+	   $ids[] = $thepost->ID;
+	}
 
-                    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-                    if( !current_user_can( 'edit_post' ) ) return;
-                    $posttype = get_post_type($post_id);
-
-
-                        //Save Home featured_post Fields
-                        if(isset( $_POST['layout_mode_meta_box_nonce'] )) {
-                              if( !isset( $_POST['layout_mode_meta_box_nonce'] ) || !wp_verify_nonce( $_POST['layout_mode_meta_box_nonce'], 'layout_mode_meta_nonce' ) ) {
-                                     return;
-                             } else {
-                                 $layout_mode = isset( $_POST['layout_mode'] )  ? $_POST['layout_mode'] : '';
-                                 update_post_meta( $post_id, 'layout_mode', $layout_mode );
-
-                            }
-                        }
+	// get and echo previous and next post in the same taxonomy
+	$thisindex = array_search($post->ID, $ids);
+	$previd = $ids[$thisindex-1];
+	$nextid = $ids[$thisindex+1];
+	if ( !empty($previd) ) {
+	   echo '<div class="pre_button"><a rel="prev" href="' . get_permalink($previd). '">View Previous '.$term_name->name  .' Case Study</a></div>';
+	}
+	if ( !empty($nextid) ) {
+	   echo '<div class="next_button"><a rel="next" href="' . get_permalink($nextid). '">View Next '.$term_name->name  .' Case Study</a></div>';
+	}
 }

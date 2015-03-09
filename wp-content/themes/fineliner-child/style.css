@@ -72,6 +72,9 @@ body#theme-body {
 #root-container .flex-control-paging li a.flex-active{
 	background: #24c8bf;
 }
+#root-container .wp-caption{
+	margin-top: 18px;
+}
 /*****************************
 		Button
 *****************************/
@@ -138,6 +141,84 @@ body#theme-body {
 #root-container #content-container .uxb-port-element-item-hover h3, #root-container #content-container .uxb-port-element-item-hover h4{
 	margin: 15px 0px;
 	font-size: 15px;
+}
+
+/*****************************
+		Gallery
+*****************************/
+#root-container .image-gallery{
+	display: inline-block;
+	text-align: center;
+	margin-left: 0px;
+}
+#root-container .image-gallery li{
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 8px;
+	transition: all .18s ease-in-out;
+	-moz-transition: all .18s ease-in-out;
+	-webkit-transition: all .18s ease-in-out;
+	-o-transition: all .18s ease-in-out;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+	margin-bottom: 15px;
+}
+#root-container .image-gallery li:hover{
+	border-color: #24c8bf;
+}
+#root-container .gallery-wrapper .gallery-item:hover {
+	border-color: #24c8bf;
+}
+
+#root-container .image-gallery li:last-child{
+	margin-bottom: 15px;
+}
+
+#root-container  .pro_divider{
+	margin: 68px auto 68px;
+}
+#root-container #content-container h3.gallery_title{
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+#root-container .next_button{
+	text-align: right;
+}
+#root-container .next_button a{
+	display: inline-block;
+	width: 18%;
+	padding: 12px;
+	text-align: center;
+	border: 1px solid #414042;
+	color: #414042;
+	margin-right: 5%;
+}
+#root-container .pre_button{
+	text-align: left;
+}
+#root-container .pre_button a{
+	display: inline-block;
+	width: 18%;
+	padding: 12px;
+	text-align: center;
+	border: 1px solid #414042;
+	color: #414042;
+	margin-left: 5%;
+}
+#root-container .pre_button a:hover, #root-container .next_button a:hover{
+	background: #0D0D0D;
+	color: #fff;
+}
+/*****************************
+		Single Blog
+*****************************/
+.single_blog_image img{
+	border: 8px solid #eaeaea;
+	margin-bottom: 68px;
+}
+#theme-body #root-container #content-container #single-meta-wrapper .blog-meta{
+	width: 100%;
+	margin: 0 0 30px 0px !important;
 }
 /*****************************
 		Media query
