@@ -4,26 +4,26 @@
  * Build the custom settings & update OptionTree.
  */
 if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
-    
+
     function uxbarn_custom_theme_options() {
       /**
-       * Get a copy of the saved settings array. 
+       * Get a copy of the saved settings array.
        */
       $saved_settings = get_option( 'option_tree_settings', array() );
-      
+
       /**
-       * Custom settings array that will eventually be 
+       * Custom settings array that will eventually be
        * passes to the OptionTree Settings API Class.
        */
-      $custom_settings = array( 
+      $custom_settings = array(
         'contextual_help' => array(
-          
+
           'sidebar'       => ''
         ),
-        
+
         // Sections
-        
-        'sections'        => array( 
+
+        'sections'        => array(
           array(
             'id'          => 'uxbarn_to_general_section',
             'title'       => __( 'General', 'uxbarn' )
@@ -57,10 +57,10 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
             'title'       => __( 'WooCommerce Plugin', 'uxbarn' )
           ),
         ),
-        'settings'        => array( 
-            
+        'settings'        => array(
+
               // General Tab
-            
+
               array(
                 'id'          => 'uxbarn_to_setting_upload_favicon',
                 'label'       => __( 'Upload Favicon', 'uxbarn' ),
@@ -73,7 +73,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => ''
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_setting_header_style',
                 'label'       => __( 'Header Style', 'uxbarn' ),
@@ -85,7 +85,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'columned-menu',
                     'label'       => __( 'Left logo + columned menus (Default)', 'uxbarn' ),
@@ -98,7 +98,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-			  
+
 			  array(
                 'id'          => 'uxbarn_to_setting_display_tagline',
                 'label'       => __( 'Display Tagline?', 'uxbarn' ),
@@ -110,7 +110,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -123,7 +123,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-			  
+
 			  array(
                 'id'          => 'uxbarn_to_setting_enable_header_search',
                 'label'       => __( 'Display Header Search?', 'uxbarn' ),
@@ -135,7 +135,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -148,7 +148,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_setting_display_scrollup_button',
                 'label'       => __( 'Display Back-To-Top Button?', 'uxbarn' ),
@@ -160,7 +160,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -173,7 +173,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-			  
+
               array(
                 'id'          => 'uxbarn_to_setting_enable_lightbox_wp_gallery',
                 'label'       => __( 'Enable Lightbox for WordPress Gallery?', 'uxbarn' ),
@@ -185,7 +185,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -198,7 +198,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_enable_page_comment',
                 'label'       => __( 'Enable Page Comment?', 'uxbarn' ),
@@ -210,7 +210,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -223,12 +223,12 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
-              
-              
-              
+
+
+
+
               // Home Slider Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_display_home_slider',
                 'label'       => __( 'Display Home Slider?', 'uxbarn' ),
@@ -240,7 +240,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -253,7 +253,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_select_slider',
                 'label'       => __( 'Slider Type', 'uxbarn' ),
@@ -265,7 +265,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'default-slider',
                     'label'       => __( 'Default Slider', 'uxbarn' ),
@@ -278,7 +278,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_default_slider_transition',
                 'label'       => __( "Home Slider's Transition Effect", 'uxbarn' ),
@@ -290,7 +290,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'fade',
                     'label'       => __( 'Fade', 'uxbarn' ),
@@ -303,7 +303,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_default_slider_transition_speed',
                 'label'       => __( "Home Slider's Transition Speed", 'uxbarn' ),
@@ -316,7 +316,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => ''
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_default_slider_auto_rotation',
                 'label'       => __( "Enable Home Slider's Auto Rotation?", 'uxbarn'),
@@ -328,7 +328,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -341,7 +341,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_default_slider_rotation_duration',
                 'label'       => __( "Home Slider's Rotation Delay", 'uxbarn' ),
@@ -354,7 +354,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => ''
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_default_slider_caption_animation',
                 'label'       => __( "Enable Home Slider's Caption Animation?", 'uxbarn' ),
@@ -366,7 +366,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -379,7 +379,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_layerslider_shortcode',
                 'label'       => __( 'LayerSlider Shortcode', 'uxbarn' ),
@@ -392,12 +392,12 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => '',
               ),
-              
-			  
-              
-              
+
+
+
+
               // Blog Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_enable_zooming_effect',
                 'label'       => __( 'Enable Zooming Effect on Blog Thumbnail?', 'uxbarn' ),
@@ -409,7 +409,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -422,7 +422,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_blog_sidebar',
                 'label'       => __( 'Blog Sidebar', 'uxbarn' ),
@@ -434,7 +434,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'none',
                     'label'       => __( 'Hide blog sidebar', 'uxbarn' ),
@@ -452,7 +452,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_override_post_meta_info',
                 'label'       => __( 'Override Post Meta Info?', 'uxbarn' ),
@@ -464,7 +464,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -477,7 +477,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_post_meta_info_date',
                 'label'       => __( 'Show date?', 'uxbarn' ),
@@ -489,7 +489,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -502,7 +502,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
               	),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_post_meta_info_author',
                 'label'       => __( 'Show author name?', 'uxbarn' ),
@@ -514,7 +514,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -527,7 +527,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
               	),
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_post_meta_info_categories',
                 'label'       => __( 'Show categories?', 'uxbarn' ),
@@ -539,7 +539,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -552,7 +552,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
               	),
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_post_meta_info_comment',
                 'label'       => __( 'Show comment count?', 'uxbarn' ),
@@ -564,7 +564,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -577,7 +577,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
               	),
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_post_meta_info_single_author_box',
                 'label'       => __( 'Show author box on single page?', 'uxbarn' ),
@@ -589,7 +589,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -602,7 +602,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
               	),
               ),
-              
+
 			  array(
                 'id'          => 'uxbarn_to_post_meta_info_single_tags',
                 'label'       => __( 'Show tags on single page?', 'uxbarn' ),
@@ -614,7 +614,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -627,12 +627,12 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
               	),
               ),
-              
-              
-              
-			  
+
+
+
+
               // Footer Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_display_footer_widget_area',
                 'label'       => __( 'Display Footer Widget Area?', 'uxbarn' ),
@@ -644,7 +644,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -657,7 +657,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_footer_widget_area_columns',
                 'label'       => __( 'Footer Widget Area Columns', 'uxbarn' ),
@@ -669,7 +669,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => '1',
                     'label'       => __( '1 Column', 'uxbarn' ),
@@ -692,7 +692,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_copyright_text',
                 'label'       => __( 'Copyright Text', 'uxbarn' ),
@@ -705,11 +705,11 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => ''
               ),
-              
-    		  
-    		  
+
+
+
     		  // Social Network Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_social_set',
                 'label'       => __( 'Social Icon Set', 'uxbarn' ),
@@ -721,7 +721,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'default',
                     'label'       => __( 'Default Set', 'uxbarn' ),
@@ -734,7 +734,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
                 ),
               ),
-              
+
 			  array(
 		        'id'          => 'uxbarn_to_setting_social_custom_set',
 		        'label'       => __( 'Custom Social Network Icons', 'uxbarn' ),
@@ -749,7 +749,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
 		        'class'       => 'social-custom-set',
 		        'condition'   => '',
 		        'operator'    => 'and',
-		        'settings'    => array( 
+		        'settings'    => array(
 		          array(
 		            'id'          => 'uxbarn_to_setting_social_custom_set_url',
 		            'label'       => __( 'URL', 'uxbarn' ),
@@ -780,7 +780,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
 		          )
 		        )
 		      ),
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_social_facebook',
                 'label'       => __( 'Facebook URL', 'uxbarn' ),
@@ -1093,11 +1093,11 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => 'social-default-set'
               ),
-              
-              
-              
+
+
+
               // Google Fonts Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_google_fonts_loader',
                 'label'       => __( 'Google Fonts Loader', 'uxbarn' ),
@@ -1126,7 +1126,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                     'value'       => 'latin',
                     'label'       => __( 'Latin (latin)', 'uxbarn' ),
                     'src'         => ''
-                  ), 
+                  ),
                   array(
                     'value'       => 'latin-ext',
                     'label'       => __( 'Latin Extended (latin-ext)', 'uxbarn' ),
@@ -1154,10 +1154,10 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   ),
                 ),
               ),
-			  
-			  
+
+
 			  // WPML Plugin Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_display_theme_wpml_lang_selector',
                 'label'       => __( 'Display WPML Language Selector?', 'uxbarn' ),
@@ -1169,7 +1169,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -1182,11 +1182,11 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                   )
                 ),
               ),
-              
-			  
-			  
+
+
+
 			  // WooCommerce Plugin Tab
-              
+
               array(
                 'id'          => 'uxbarn_to_setting_wooc_shop_page_sidebar',
                 'label'       => __( 'Shop Page Sidebar', 'uxbarn' ),
@@ -1198,7 +1198,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'none',
                     'label'       => __( 'Hide shop sidebar', 'uxbarn' ),
@@ -1227,7 +1227,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => '3',
                     'label'       => __( '3 Columns', 'uxbarn' ),
@@ -1263,7 +1263,7 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'post_type'   => '',
                 'taxonomy'    => '',
                 'class'       => '',
-                'choices'     => array( 
+                'choices'     => array(
                   array(
                     'value'       => 'true',
                     'label'       => __( 'Yes', 'uxbarn' ),
@@ -1288,15 +1288,15 @@ if ( ! function_exists( 'uxbarn_custom_theme_options' ) ) {
                 'taxonomy'    => '',
                 'class'       => ''
               ),
-              
+
         )
       );
-       
+
       /* settings are not the same update the DB */
       if ( $saved_settings !== $custom_settings ) {
-        update_option( 'option_tree_settings', $custom_settings ); 
+        update_option( 'option_tree_settings', $custom_settings );
       }
-      
+
     }
 
 }

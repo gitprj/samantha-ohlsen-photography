@@ -8,9 +8,16 @@ function theme_enqueue_styles() {
         array('parent-style')
     );
 }
-
-
-
+function Contact_cta_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Contact CTA Box', 'theme-slug' ),
+        'id' => 'contact_cta_box',
+        'description' => '',
+        'before_title' => '<h1>',
+        'after_title' => '</h1>',
+    ) );
+}
+add_action( 'widgets_init', 'Contact_cta_widgets_init' );
 // Shortcode for Blog pots
 
 		add_action( 'init', 'uxb_post_load_shortcodes' );
@@ -128,7 +135,7 @@ if ( ! function_exists( 'uxb_post_alter_query_object' ) ) {
 
 	function uxb_post_alter_query_object( $query ) {
 
-		if ( ! is_admin() && $query->is_main_query() ) {
+		if ( !is_admin() && $query->is_main_query() ) {
 
 			if ( is_tax( 'category' ) ) {
 				$query->set( 'posts_per_page', -1 ); // Reset posts-per-page for taxonomy-portfolio.php
@@ -257,23 +264,23 @@ if ( ! function_exists( 'uxb_port_load_post_element' ) ) {
 			         'description' => __('Select the display type for this element.', 'uxb_port'),
 			         'admin_label' => true,
 			      ),
-			      array(
-			         'type' 		=> 'dropdown',
-			         'holder' 		=> 'div',
-			         'class' 		=> '',
-			         'heading' 		=> __( 'Show category filter', 'uxb_port' ),
-			         'param_name' 	=> 'show_filter',
-			         'value' 		=> array(
-					                        __( 'Yes', 'uxb_port' ) => 'true',
-					                        __( 'No', 'uxb_port' ) 	=> 'false',
-					                    ),
-			         'description' 	=> __( 'Whether to display the category filter at the top of the element.', 'uxb_port' ),
-			         'dependency' 	=> array(
-				                            'element' => 'type',
-				                            'value' => array( 'col3', 'col4' ),
-				                        ),
-			         'admin_label' 	=> false,
-			      ),
+			      // array(
+			      //    'type' 		=> 'dropdown',
+			      //    'holder' 		=> 'div',
+			      //    'class' 		=> '',
+			      //    'heading' 		=> __( 'Show category filter', 'uxb_port' ),
+			      //    'param_name' 	=> 'show_filter',
+			      //    'value' 		=> array(
+					    //                     __( 'Yes', 'uxb_port' ) => 'true',
+					    //                     __( 'No', 'uxb_port' ) 	=> 'false',
+					    //                 ),
+			      //    'description' 	=> __( 'Whether to display the category filter at the top of the element.', 'uxb_port' ),
+			      //    'dependency' 	=> array(
+				     //                        'element' => 'type',
+				     //                        'value' => array( 'col3', 'col4' ),
+				     //                    ),
+			      //    'admin_label' 	=> false,
+			      // ),
 
 				  array(
 			         'type'			=> 'dropdown',
@@ -817,7 +824,7 @@ if ( ! function_exists( 'uxb_post_get_extra_class_name' ) ) {
 }
 
 		add_action( 'wp_enqueue_scripts', 'uxb_post_load_frontend_styles' );
-		add_action( 'wp_enqueue_scripts', 'uxb_post_load_frontend_scripts' );
+		 add_action( 'wp_enqueue_scripts', 'uxb_post_load_frontend_scripts' );
 		add_action( 'wp_enqueue_scripts', 'uxb_post_load_on_demand_assets' );
 
 
@@ -825,13 +832,7 @@ if ( ! function_exists( 'uxb_post_load_frontend_styles' ) ) {
 
 	function uxb_post_load_frontend_styles() {
 
-		// Prepare all styles
-	    wp_register_style( 'uxb-port-foundation', get_stylesheet_directory_uri() . 'css/foundation-lite.css', array(), null ); // only contains row, columns stuff
-	    wp_register_style( 'uxb-port-isotope', get_stylesheet_directory_uri() . 'css/isotope.css', array(), null );
-	    wp_register_style( 'uxbarn-fancybox', get_stylesheet_directory_uri() . 'css/jquery.fancybox.css', array(), null ); // named the handle as same as the theme's
-		wp_register_style( 'uxbarn-fancybox-helpers-thumbs', get_stylesheet_directory_uri() . 'css/fancybox/helpers/jquery.fancybox-thumbs.css', array(), null ); // named the handle as same as the theme's
-		wp_register_style( 'uxbarn-flexslider', get_stylesheet_directory_uri() . 'css/flexslider.css', array(), null ); // named the handle as same as the theme's
-	    wp_register_style( 'uxbarn-font-awesome', get_stylesheet_directory_uri() . 'css/font-awesome.min.css', array(), null );
+		wp_register_style( 'uxbarn-font-awesome', get_stylesheet_directory_uri() . 'css/font-awesome.min.css', array(), null );
 		wp_register_style( 'uxb-port-frontend', get_stylesheet_directory_uri() . 'css/plugin-frontend.css', array(), null );
 		wp_register_style( 'uxb-port-responsive', get_stylesheet_directory_uri() . 'css/plugin-responsive.css', array( 'uxb-port-frontend' ), null );
 
@@ -845,15 +846,7 @@ if ( ! function_exists( 'uxb_post_load_frontend_scripts' ) ) {
 
 	function uxb_post_load_frontend_scripts() {
 
-		// Prepare all scripts
-	    wp_register_script( 'uxb-port-modernizr', get_stylesheet_directory_uri() . 'js/custom.modernizr.js', array( 'jquery' ), null );
-	    wp_register_script( 'uxb-port-foundation', get_stylesheet_directory_uri() . 'js/foundation.min.js', array( 'jquery' ), null, true );
-	    wp_register_script( 'uxbarn-isotope', get_stylesheet_directory_uri() . 'js/jquery.isotope.min.js', array( 'jquery' ), null, true ); // named the handle as same as the theme's
-	    wp_register_script( 'uxb-port-mousewheel', get_stylesheet_directory_uri() . 'js/jquery.mousewheel-3.0.6.pack.js', array( 'jquery' ), null, true );
-	    wp_register_script( 'uxbarn-flexslider', get_stylesheet_directory_uri() . 'js/jquery.flexslider.js', array( 'jquery' ), null, true ); // named the handle as same as the theme's
-	    wp_register_script( 'uxbarn-fancybox', get_stylesheet_directory_uri() . 'js/jquery.fancybox.pack.js', array( 'jquery' ), null, true ); // named the handle as same as the theme's
-	    wp_register_script( 'uxbarn-fancybox-helpers-thumbs', get_stylesheet_directory_uri() . 'js/fancybox-helpers/jquery.fancybox-thumbs.js', array( 'jquery' ), null, true ); // named the handle as same as the theme's
-	    wp_register_script( 'uxb-port-frontend', get_stylesheet_directory_uri() . 'js/plugin-frontend.js', array( 'jquery' ), null, true );
+		wp_register_script( 'uxb-port-frontend', get_stylesheet_directory_uri() . 'js/plugin-frontend.js', array( 'jquery' ), null, true );
 
 
 		// Prepare any values from the plugin options to be used in the front-end JS
@@ -906,14 +899,10 @@ if ( ! function_exists( 'uxb_post_load_on_demand_assets' ) ) {
 
 			if ( uxb_port_has_shortcode( 'uxb_post', $post->post_content ) ) {
 
-				wp_enqueue_style( 'uxb-port-isotope' );
-				wp_enqueue_style( 'uxbarn-flexslider' );
+
 				wp_enqueue_style( 'uxb-port-frontend' );
 				wp_enqueue_style( 'uxb-port-responsive' );
-
-				wp_enqueue_script( 'uxbarn-isotope' );
-				wp_enqueue_script( 'uxbarn-flexslider' );
-    			wp_enqueue_script( 'uxb-port-frontend' );
+				wp_enqueue_script( 'uxb-port-frontend' );
 
 			}
 
@@ -921,43 +910,22 @@ if ( ! function_exists( 'uxb_post_load_on_demand_assets' ) ) {
 
 
 		if ( is_singular( 'post' ) ) {
-
-	    	wp_enqueue_style( 'uxb-port-foundation' );
-			wp_enqueue_style( 'uxb-port-isotope' );
-			wp_enqueue_style( 'uxbarn-fancybox' );
-			wp_enqueue_style( 'uxbarn-fancybox-helpers-thumbs' );
-			wp_enqueue_style( 'uxbarn-flexslider' );
 			wp_enqueue_style( 'uxbarn-font-awesome' );
 			wp_enqueue_style( 'uxb-port-frontend' );
 			wp_enqueue_style( 'uxb-port-responsive' );
-
-		    wp_enqueue_script( 'uxb-port-modernizr' );
-		    wp_enqueue_script( 'uxb-port-foundation' );
-		    wp_enqueue_script( 'uxbarn-isotope' );
-		    wp_enqueue_script( 'uxb-port-mousewheel' );
-		    wp_enqueue_script( 'uxbarn-flexslider' );
-		    wp_enqueue_script( 'uxbarn-fancybox' );
-		    wp_enqueue_script( 'uxbarn-fancybox-helpers-thumbs' );
 			wp_enqueue_script( 'uxb-port-frontend' );
 
 			// Conditional comment for IE8
-		    global $wp_styles;
-		    wp_enqueue_style( 'uxb-port-foundation-ie8', get_stylesheet_directory_uri() . 'css/foundation-ie8.css', array(), null);
-		    $wp_styles->add_data( 'uxb-port-foundation-ie8', 'conditional', 'IE 8' );
-
-		}
+		 }
 
 		if ( is_tax( 'category' ) ) {
 
-	    	wp_enqueue_style( 'uxb-port-foundation' );
+
 			wp_enqueue_style( 'uxb-port-isotope' );
 			wp_enqueue_style( 'uxb-port-frontend' );
 			wp_enqueue_style( 'uxb-port-responsive' );
 
-		    wp_enqueue_script( 'uxb-port-modernizr' );
-		    wp_enqueue_script( 'uxb-port-foundation' );
-		    wp_enqueue_script( 'uxbarn-isotope' );
-			wp_enqueue_script( 'uxb-port-frontend' );
+		  wp_enqueue_script( 'uxb-port-frontend' );
 
 
 		}
@@ -992,7 +960,8 @@ function custom_post_links(){
 	);
 
 	$postlist = get_posts( $postlist_args );
-
+	$previd = '';
+	$nextid = '';
 	// get ids of posts retrieved from get_posts
 	$ids = array();
 	foreach ($postlist as $thepost) {
@@ -1001,8 +970,8 @@ function custom_post_links(){
 
 	// get and echo previous and next post in the same taxonomy
 	$thisindex = array_search($post->ID, $ids);
-	$previd = $ids[$thisindex-1];
-	$nextid = $ids[$thisindex+1];
+	$previd = $ids[$thisindex - 1];
+	$nextid = $ids[$thisindex + 1];
 	if ( !empty($previd) ) {
 	   echo '<div class="pre_button"><a rel="prev" href="' . get_permalink($previd). '">View Previous '.$term_name->name  .' Case Study</a></div>';
 	}

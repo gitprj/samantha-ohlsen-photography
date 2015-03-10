@@ -27,7 +27,7 @@ global $post;
             }
 
     if ( function_exists( 'ot_get_option' ) ) {
-
+        $blog_thumbnail_class = '';
         if ( ot_get_option( 'uxbarn_to_setting_enable_zooming_effect', 'true' ) == 'true' ) {
             $blog_thumbnail_class .= ' zoom-effect ';
         }
@@ -78,6 +78,11 @@ global $post;
                             }
                             echo easy_image_gallery();
             } ?>
+        </div>
+        <div class="clear"></div>
+        <div class="vc_empty_space" style="height: 40px"><span class="vc_empty_space_inner"></span></div>
+        <div class="contact_info">
+            <?php  dynamic_sidebar('contact_cta_box' ); ?>
         </div>
         <div class="blog_info ">
             <div class="uxb-col large-12 columns">

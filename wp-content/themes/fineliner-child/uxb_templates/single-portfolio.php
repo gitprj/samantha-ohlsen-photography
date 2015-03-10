@@ -300,11 +300,11 @@ global $post;
 		<div class="view_more">
 			<?php custom_post_links(); ?>
 		</div>
+		<div class="clear"></div>
 		<div class="vc_empty_space" style="height: 40px"><span class="vc_empty_space_inner"></span></div>
-		<div class="cta-box  about-contact-form ">
-		       <div class="cta-box-content "><?php the_field('contact_text'); ?></div>
-		     <div class="cta-box-button right "><a href="<?php the_field('contact_button_url'); ?>" class="   button"><?php the_field('contact_button_text'); ?></a></div>
-		</div>
+		<div class="contact_info">
+            		<?php  dynamic_sidebar('contact_cta_box' ); ?>
+        		</div>
 	    </div>
 
 	    <?php
