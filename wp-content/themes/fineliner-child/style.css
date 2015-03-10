@@ -78,6 +78,14 @@ body#theme-body {
 .clear{
 	clear: both;
 }
+/*#root-container .uxb-port-root-element-wrapper .wwm_social_share,
+#root-container .uxb-tmnl-testimonial-wrapper .wwm_social_share
+{
+	display: none !important;
+}*/
+#root-container #content-container li{
+	margin-bottom: 10px;
+}
 /*****************************
 		Button
 *****************************/
@@ -137,6 +145,7 @@ body#theme-body {
 #root-container .uxb-port-element-item-hover {
 	background: #f6f6f6;
 	width: 101%;
+	z-index: 2;
 }
 #root-container .uxb-port-element-item-hover hr{
 	border-top: 1px solid #414042;
@@ -225,6 +234,7 @@ body#theme-body {
 }
 .contact_info li{
 	list-style: none;
+	margin: 0;
 }
 /*****************************
 		Media query
