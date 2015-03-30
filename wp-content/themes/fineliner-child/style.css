@@ -19,6 +19,21 @@ body#theme-body {
 	color: #414042;
 	font-weight: 400;
 }
+body #root-container{
+	padding: 50px 0;
+}
+body #content-container{
+	padding-bottom: 80px;
+}
+body #header-container{
+	margin-bottom: 0px;
+}
+body #intro{
+	padding: 40px 100px 35px;
+}
+body #inner-content-container{
+	margin-top: 90px;
+}
 #root-container #intro h1, #intro h2, #root-container #content-container h1{
 	color: #414042;
 	font-size: 26px;
@@ -46,31 +61,31 @@ body#theme-body {
 	font-weight: 400;
 }
 #theme-body #root-container #content-container .uxb-tmnl-testimonial-item .uxb-tmnl-cite, #theme-body #root-container #footer-content .uxb-tmnl-testimonial-item .uxb-tmnl-cite{
-	color: #24c8bf;
+	color: #000;
 	font-weight: 700;
 	font-size: 14px;
 }
 #root-container #content-container .uxb-tmnl-testimonial-bullets a.selected, #root-container #content-container #sidebar-wrapper .uxb-tmnl-testimonial-bullets a.selected, #root-container #footer-content .uxb-tmnl-testimonial-bullets a.selected{
-	border-color: #24c8bf;
+	border-color: #000;
 }
 #root-container .slider-controller:hover, #root-container .uxb-port-slider-controller:hover{
-	background: #24c8bf !important;
+	background: #000 !important;
 }
 #root-container #content-container .ui-accordion .ui-accordion-header a{
 	color:#414042;
 	font-size: 14px;
 }
 #root-container #content-container .ui-accordion .ui-accordion-header.ui-state-active a{
-	color: #24c8bf;
+	color: #000;
 }
 #root-container #content-container .ui-accordion-header.ui-state-active {
-	border-color: #24c8bf;
+	border-color: #000;
 }
 #root-container .has-line{
-	border-color: #24c8bf;
+	border-color: #000;
 }
 #root-container .flex-control-paging li a.flex-active{
-	background: #24c8bf;
+	background: #000;
 }
 #root-container .wp-caption{
 	margin-top: 18px;
@@ -96,8 +111,8 @@ body#theme-body {
 }
 #theme-body #root-container .button:hover{
 	color: #fff;
-	background: #24c8bf;
-	border-color: #24c8bf;
+	background: #000;
+	border-color: #000;
 }
 
 
@@ -123,13 +138,18 @@ body#theme-body {
 	border: none;
 }
 #theme-body #root-container .cta-box.about-contact-form .button{
-	color: #fff;
-	border: 2px solid #C3B8B8;
-	background: #919191;
+	color: #000;
+	border: 1px solid #000;
+	background: #fff;
 	font-weight: 700;
 	font-style: italic;
 	font-size: 20px;
 	line-height: 22px;
+}
+#theme-body #root-container .cta-box.about-contact-form .button:hover{
+	color: #fff;
+	border: 1px solid transparent;
+	background: #000;
 }
 .cta-box.about-contact-form .cta-box-button.right {
 	margin-top: -35px;
@@ -176,10 +196,10 @@ body#theme-body {
 	margin-bottom: 15px;
 }
 #root-container .image-gallery li:hover{
-	border-color: #24c8bf;
+	border-color: #000;
 }
 #root-container .gallery-wrapper .gallery-item:hover {
-	border-color: #24c8bf;
+	border-color: #000;
 }
 
 #root-container .image-gallery li:last-child{
